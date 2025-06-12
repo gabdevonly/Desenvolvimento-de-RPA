@@ -27,6 +27,7 @@
     </div>
 
     <div v-else class="romantic-message">
+      <h1 class="romantic-title">💘 Kemily Brandão e Gabriel Brandão 💘</h1>
       <h1 class="romantic-title">💘 Bem-vinda ao nosso cantinho 💘</h1>
       <p class="romantic-text">{{ mensagem }}</p>
 
