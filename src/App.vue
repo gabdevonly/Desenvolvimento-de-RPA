@@ -26,7 +26,6 @@
       </form>
     </div>
 
-
     <div v-else class="romantic-message">
       <h1 class="romantic-title">💘 Bem-vinda ao nosso cantinho 💘</h1>
       <p class="romantic-text">{{ mensagem }}</p>
@@ -51,13 +50,9 @@
         sua mão em casamento...
       </p>
 
-
     </div>
   </div>
 </template>
-
-
-
 
 <script>
 export default {
@@ -84,19 +79,23 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
+/* Tornando o box-sizing universal para facilitar dimensionamento */
+* {
+  box-sizing: border-box;
+}
+
 .login-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Total da tela */
+  height: 100vh; /* ocupa a altura total da tela */
   background-color: #aa3c47;
   overflow: hidden;
   flex-direction: column;
   text-align: center;
+  padding: 20px; /* espaço nas laterais para telas pequenas */
 }
 
 .login-content {
@@ -104,15 +103,9 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
-
-.login-text {
-  display: block;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  padding: 8px;
   width: 100%;
-  box-sizing: border-box;
+  max-width: 400px; /* limita a largura máxima */
+  position: relative;
 }
 
 .background-overlay {
@@ -122,25 +115,22 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  pointer-events: none; /* evita interferir nos cliques */
 }
 
 .logo {
+  max-width: 40vw;
   width: 200px;
   height: auto;
   margin-bottom: 10px;
 }
 
-.senha {
-  font-family: Georgia;
-  font-size: 15px;
-  color: white;
-}
-
 .information {
-  font-family: Georgia;
-  font-size: 20px;
+  font-family: Georgia, serif;
+  font-size: 1.25rem; /* fonte responsiva */
   font-weight: bold;
   color: white;
+  padding: 0 10px;
 }
 
 .login-form {
@@ -152,13 +142,24 @@ export default {
   padding: 24px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-width: 300px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-text {
+  display: block;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .login-form input,
 .login-form button {
   padding: 10px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .login-form button {
@@ -166,15 +167,92 @@ export default {
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .login-form button:hover {
   background-color: #0B0530;
 }
 
-.input-wrapper{
+.input-wrapper {
+  color: white;
+  position: relative;
+}
+
+.senha {
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.romantic-message {
+  max-width: 600px;
+  padding: 20px;
   color: white;
 }
 
+.romantic-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
 
+.romantic-text,
+.romantic-extra {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Media Queries para telas menores */
+
+@media (max-width: 600px) {
+  .background-overlay {
+    position: relative;
+    top: 0;
+  }
+  
+  .logo {
+    max-width: 80vw;
+    width: auto;
+  }
+  
+  .information {
+    font-size: 1rem;
+  }
+  
+  .login-form {
+    padding: 16px;
+    max-width: 95vw;
+  }
+  
+  .login-text,
+  .login-form input,
+  .login-form button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .senha {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .romantic-message {
+    padding: 10px;
+    max-width: 90vw;
+  }
+  
+  .romantic-title {
+    font-size: 1.5rem;
+  }
+  
+  .romantic-text,
+  .romantic-extra {
+    font-size: 1rem;
+  }
+}
 </style>
