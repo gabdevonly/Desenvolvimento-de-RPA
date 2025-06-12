@@ -35,7 +35,7 @@
         também estou aprendendo. Espero que goste, pois, deu um trabalho do cacete KKKKKK!
       </p>
 
-      <h2>Novembro/2019</h2>
+      <h2>16 de Novembro/2019</h2>
 
       <p class="romantic-extra">
         A data que marcou nossas vidas, um "OI Vizinho" que rendeu até os dias de hoje, jamais esquecerei!
@@ -49,6 +49,37 @@
         chamarem a sua família para uma conversa e consentimento com a sua mãe, para que eu pudesse pedir a
         sua mão em casamento...
       </p>
+
+      <h2>Outubro/2023 até Meados de Novembro/2024</h2>
+
+      <p class="romantic-extra">
+        Aaaaaa, como esquecer esse periodo 😢, foi quando descobrimos o surgimento da nossa pequena, um pedacinho de nois 2 sendo gerado
+        dentro de você. Fruto do nosso amor!
+        
+        Junto vieram as preocupações KKKKK, será que estamos preparados ? E como eu te disse, o filho sempre vem fixado no tempo de Deus.
+
+        Foi um periodo muito legal, na onde começamos a intender de fato o sentido da vida e do amor.
+      </p>
+
+      <h2>Novembro/2024 até os dias de hoje</h2>
+
+      <p class="romantic-extra">
+        E cá estamos nós, juntos até hoje na graça de Deus.
+        Estamos construindo a nossa familia, agora já temos a nossa casinha, nada melhor que isso 😍.
+
+        Mesmo com altos e baixos, estamos firmes e fortes e temos um ao outro sempre.
+
+        E é isso, uma pequena demonstração de amor, e comprovação que de fato eu amo a nossa historia,
+        e jamais esquecerei. Quando vier uma pequena dúvida sobre meu amor por você, LEMBRE-SE DESSE DIA.
+
+        Isso foi totalmente escrito por mim, então desculpe se não parecer tão bonito, mais eu fiz com coração💘.
+      </p>
+
+      <h1>TE AMOOOOO AGORA E PARA SEMPRE MINHA PRINCESINHA 😍💘</h1>
+
+      <img src="/nos2.jpeg" alt="Nós dois" class="foto-romantica" />
+      <img src="/nos2_1.jpeg" alt="Nós dois" class="foto-romantica" />
+
     </div>
 
   </div>
@@ -72,7 +103,7 @@ export default {
         this.logado = true;
         this.mensagem = 'Você é o amor da minha vida! 💖';
       } else {
-        this.mensagem = 'Email ou senha incorretos 😢';
+        this.mensagem = 'Você errou a nossa data? Achei que vc me amava... 😢';
       }
     },
   },
@@ -208,5 +239,13 @@ export default {
   .login-form button {
     font-size: 14px;
   }
+}
+
+.foto-romantica {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 </style>
