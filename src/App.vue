@@ -32,25 +32,25 @@
 
       <p class="romantic-extra">
         Princessa, isso é apenas um pequeno gesto para simbolizar o meu amor por você. Algo que trabalho todo dia e,
-        tambem estou aprendendo. Espero que goste, pois, deu um trabalho do cacete KKKKKK ! 
+        também estou aprendendo. Espero que goste, pois, deu um trabalho do cacete KKKKKK!
       </p>
 
       <h2>Novembro/2019</h2>
 
       <p class="romantic-extra">
-        A data que marcou nossas vidas, um "OI Vizinho" que rendeu até os dias de hoje, jamais esquecerei! 
+        A data que marcou nossas vidas, um "OI Vizinho" que rendeu até os dias de hoje, jamais esquecerei!
       </p>
 
       <h2>Novembro/2019 a Meados de Outubro/2023</h2>
 
       <p class="romantic-extra">
-        Esse periodo foi muito dificil pra nois, pois, enfretamos duras batalhas que alternavam entre ciumes e 
-        a dificuldade do nosso relacionamento com a sua familia! Até o seu sogro e sogra (Meu pai e Minha mãe) tomar a frente e
-        chamar a sua familia para uma conversa e concentimento com a sua mãe, para que eu pudesse pedir a
+        Esse período foi muito difícil pra nós, pois enfrentamos duras batalhas que alternavam entre ciúmes e 
+        a dificuldade do nosso relacionamento com a sua família! Até o seu sogro e sogra (Meu pai e minha mãe) tomarem a frente e
+        chamarem a sua família para uma conversa e consentimento com a sua mãe, para que eu pudesse pedir a
         sua mão em casamento...
       </p>
-
     </div>
+
   </div>
 </template>
 
@@ -58,8 +58,8 @@
 export default {
   data() {
     return {
-      email:'',
-      senha:'',
+      email: '',
+      senha: '',
       mensagem: '',
       logado: false,
       email_correto: 'kemilya835@gmail.com',
@@ -80,22 +80,16 @@ export default {
 </script>
 
 <style scoped>
-/* Tornando o box-sizing universal para facilitar dimensionamento */
-* {
-  box-sizing: border-box;
-}
-
 .login-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* ocupa a altura total da tela */
+  min-height: 100vh;
   background-color: #aa3c47;
-  overflow: hidden;
-  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
   text-align: center;
-  padding: 20px; /* espaço nas laterais para telas pequenas */
 }
 
 .login-content {
@@ -104,62 +98,67 @@ export default {
   align-items: center;
   gap: 20px;
   width: 100%;
-  max-width: 400px; /* limita a largura máxima */
-  position: relative;
+  max-width: 400px;
 }
 
 .background-overlay {
-  position: absolute;
-  top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  pointer-events: none; /* evita interferir nos cliques */
 }
 
 .logo {
-  max-width: 40vw;
-  width: 200px;
+  width: 120px;
   height: auto;
   margin-bottom: 10px;
 }
 
 .information {
-  font-family: Georgia, serif;
-  font-size: 1.25rem; /* fonte responsiva */
+  font-family: Georgia;
+  font-size: 18px;
   font-weight: bold;
   color: white;
-  padding: 0 10px;
+  margin-top: 20px;
 }
 
 .login-form {
-  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
   background-color: #aa3c47;
   padding: 24px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 400px;
-}
-
-.login-text {
-  display: block;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  padding: 8px;
-  width: 100%;
-  font-size: 1rem;
   box-sizing: border-box;
 }
 
-.login-form input,
-.login-form button {
-  padding: 10px;
-  font-size: 1rem;
+.input-wrapper {
+  position: relative;
+  color: white;
+}
+
+.login-text {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+}
+
+.senha {
+  font-family: Georgia;
+  font-size: 14px;
+  color: white;
+  text-align: right;
 }
 
 .login-form button {
@@ -167,92 +166,47 @@ export default {
   color: white;
   border: none;
   cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
   border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
 .login-form button:hover {
-  background-color: #0B0530;
-}
-
-.input-wrapper {
-  color: white;
-  position: relative;
-}
-
-.senha {
-  font-family: Georgia, serif;
-  font-size: 0.9rem;
-  color: white;
-  cursor: pointer;
-  text-align: right;
-  margin-bottom: 10px;
+  background-color: #0b0530;
 }
 
 .romantic-message {
-  max-width: 600px;
-  padding: 20px;
   color: white;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: left;
 }
 
 .romantic-title {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .romantic-text,
 .romantic-extra {
-  font-size: 1.1rem;
+  margin-bottom: 16px;
   line-height: 1.5;
-  margin-bottom: 15px;
 }
 
-/* Media Queries para telas menores */
-
-@media (max-width: 600px) {
-  .background-overlay {
-    position: relative;
-    top: 0;
-  }
-  
+/* Responsivo */
+@media (max-width: 500px) {
   .logo {
-    max-width: 80vw;
-    width: auto;
-  }
-  
-  .information {
-    font-size: 1rem;
-  }
-  
-  .login-form {
-    padding: 16px;
-    max-width: 95vw;
-  }
-  
-  .login-text,
-  .login-form input,
-  .login-form button {
-    font-size: 0.9rem;
-    padding: 8px;
+    width: 100px;
   }
 
-  .senha {
-    font-size: 0.8rem;
-    margin-bottom: 8px;
+  .information {
+    font-size: 16px;
   }
-  
-  .romantic-message {
-    padding: 10px;
-    max-width: 90vw;
-  }
-  
-  .romantic-title {
-    font-size: 1.5rem;
-  }
-  
-  .romantic-text,
-  .romantic-extra {
-    font-size: 1rem;
+
+  .login-form button {
+    font-size: 14px;
   }
 }
 </style>
