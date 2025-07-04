@@ -2,16 +2,7 @@ import { Page } from "playwright";
 import { config } from "dotenv";
 import axios from "axios";
 
-// Carrega variáveis de ambiente do arquivo .env
-
 config();
-
-/**
- * A função realizarLogin faz login na plataforma AgendaCash.
- * Ela acessa a URL, preenche o e-mail e a senha com valores do .env,
- * clica no botão de login, tira prints antes e depois,
- * e confirma se o login deu certo verificando se o dashboard está ativo.
- */
 
 export async function realizarLogin(page: Page): Promise<void> {
   await page.goto("https://app.agendacash.com.br/dashboard");
@@ -37,12 +28,6 @@ export async function realizarLogin(page: Page): Promise<void> {
   });
 }
 
-/**
- * A função geracpf faz uma requisição POST para a API do site 4Devs,
- * solicitando a geração de um CPF válido (sem pontuação).
- * Retorna o CPF gerado.
- */
-
 export async function geracpf() {
   const response = await axios.post(
     "https://www.4devs.com.br/ferramentas_online.php",
@@ -58,12 +43,6 @@ export async function geracpf() {
   );
   return response.data;
 }
-
-/**
- * A função geracnpj faz uma requisição POST para a API do site 4Devs,
- * solicitando a geração de um CNPJ válido (sem pontuação).
- * Retorna o CNPJ gerado.
- */
 
 export async function geracnpj() {
   const response = await axios.post(
@@ -81,12 +60,6 @@ export async function geracnpj() {
   return response.data;
 }
 
-/**
- * A função geraRG faz uma requisição POST para a API do 4Devs,
- * solicitando a geração de um número de RG.
- * Retorna o RG gerado.
- */
-
 export async function geraRG() {
   const response = await axios.post(
     "https://www.4devs.com.br/ferramentas_online.php",
@@ -102,13 +75,6 @@ export async function geraRG() {
   return response.data;
 }
 
-/**
- * A função geraTelefone cria um número de celular aleatório.
- * Gera um DDD entre 10 e 99, sempre usa prefixo 9 (celular),
- * monta as duas partes do número com 4 dígitos cada.
- * Retorna o telefone como string.
- */
-
 export function geraTelefone(): string {
   const ddd = Math.floor(Math.random() * 90 + 10);
   const prefixo = 9;
@@ -118,13 +84,6 @@ export function geraTelefone(): string {
   return `${ddd}${prefixo}${parte1}${parte2}`;
 }
 
-/**
- * A função geraMat cria um número de matrícula aleatório.
- * Recebe a quantidade de dígitos (padrão é 5),
- * gera um número inteiro dentro desse intervalo
- * e retorna como string.
- */
-
 export function geraMat(digitos: number = 5): string {
   const min = Math.pow(10, digitos - 1);
   const max = Math.pow(10, digitos) - 1;
@@ -132,12 +91,6 @@ export function geraMat(digitos: number = 5): string {
   const numero = Math.floor(Math.random() * (max - min + 1)) + min;
   return numero.toString();
 }
-
-/**
- * A função geracep faz uma requisição POST para a API do site 4Devs,
- * solicitando a geração de um CEP válido (sem pontuação).
- * Retorna o CEP gerado.
- */
 
 export async function geracep() {
   const response = await axios.post(
@@ -153,4 +106,17 @@ export async function geracep() {
   );
 
   return response.data;
+}
+
+export async function SelectOptions(
+  field: string,
+  textdigit: string,
+  button: string,
+  page: Page
+) {
+  const input = page.locator('input[placeholder="Buscar..."]');
+
+  await page.click(field);
+  await input.fill(textdigit);
+  await input.press(button);
 }
